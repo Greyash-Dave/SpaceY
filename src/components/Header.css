@@ -1,0 +1,135 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-container::before{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transition: top 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.header-container.scrolled::before {
+    top: 0;
+    transition: top 0.3s ease-in-out;
+}
+
+
+.header-container.scrolling-down::before {
+    top: -100%;
+    transition: top 0.3s ease-in-out;
+
+}
+  
+/* .header-container.scrolling-down:not(.scrolled) {
+    color: transparent;
+}
+  
+.header-container.scrolling-down:not(.scrolled) svg {
+    fill: transparent;
+} */
+
+.header-container.scrolling-down{
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+/* .header-container.scrolling-down .navbar-section button {
+    color: transparent;
+    transition: color 0.3s;
+}
+
+.header-container.scrolling-down svg {
+    fill: transparent !important;
+    transition: fill 0.3s;
+
+}
+
+.header-container.scrolling-down .shop-section{
+    color: transparent;
+    transition: color 0.3s;
+
+} */
+
+svg {
+    fill: white !important;
+}
+
+.home-icon{
+    width: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4rem;
+}
+
+.home-icon svg{
+  height: 2rem;
+  margin: 0rem 1rem;
+}
+
+.navbar-section{
+    display: flex;
+    width: 73%;
+    color: white;
+    margin: 0rem 1rem;
+    padding-top: 1rem;
+}
+
+.navbar-items-btn {
+    background-color: transparent;
+    border: 0;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.navbar-items {
+    margin-right: 2rem;
+}
+
+.navbar-items-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    /* transition: transform 0.3s ease-in-out; */
+}
+
+.navbar-items-btn.hovering::after {
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.navbar-items-btn.hovered::after {
+    transform: translate(100%, 0%);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.shop-section{
+    color: white;
+    padding-top: 1rem;
+    margin-right: 8rem;
+}
